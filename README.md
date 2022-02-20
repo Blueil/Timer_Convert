@@ -1,4 +1,4 @@
-# Timer_Convert
+# Timer Convert
 ## Download
 Download [latest release](https://github.com/Blueil/Timer_Convert/releases/latest).
 ## Use
