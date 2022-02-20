@@ -1,4 +1,6 @@
 # Timer_Convert
+## Download
+Download [latest release](https://github.com/Blueil/Timer_Convert/releases/latest).
 ## Use
 1. Export from twisty timer to other timers and get the file on the pc or connect the phone and browse to it.
 2. Start `converter.exe` and select the file or use
