@@ -7,10 +7,11 @@ Download [latest release](https://github.com/Blueil/Timer_Convert/releases/lates
 ```posh
 converter.exe path_to_file.txt
 ```
-3. Open CubeDesk, then goto Settings > Data > (`Recommended`: Click export all data in case something goes wrong) > Import Data > Import From CsTimer.
-4. Select cube type, import the generated `output.csv` file and then click proccess file and import data
-5. Goto Sessions and select as the current one the one you want to add the solves to.
-6. Click on `csTimer Session` and then merge into current.
+3. It will ask in the console: `How much solves do you want to convert from x solves?`. Answer how much of the latest solves you want to import, if you want to import all just type the x.
+4. Open CubeDesk, then goto Settings > Data > (`Recommended`: Click export all data in case something goes wrong) > Import Data > Import From CsTimer.
+5. Select cube type, import the generated `output.csv` file and then click proccess file and import data
+6. Goto Sessions and select as the current one the one you want to add the solves to.
+7. Click on `csTimer Session` and then merge into current.
 
 You are done!
 
