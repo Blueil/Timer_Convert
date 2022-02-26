@@ -6,6 +6,7 @@ import (
 	"strings"
 	"time"
 	"github.com/sqweek/dialog"
+	"strconv"
 );
 
 func main() {
@@ -20,7 +21,6 @@ func main() {
 		//return;
 		var dialogErr error;
 		filename, dialogErr = dialog.File().Filter("Twisty Timer Export File (.txt)", "txt").Load();
-		fmt.Println(filename);
 		check(dialogErr);
 	} else {
 		filename = os.Args[1];
@@ -33,7 +33,14 @@ func main() {
 
 	solves := []string{"No.;Time;Comment;Scramble;Date;P.1"};
 
-	for i := 0; i < len(content); i++ {
+	var sovlesLimitStr string;
+	fmt.Println("How much solves do you want to convert from " + fmt.Sprint(len(content) - 1) + " solves?");
+	fmt.Scanln(&sovlesLimitStr);
+
+	solvesLimit, solvesLimitErr := strconv.Atoi(sovlesLimitStr);
+	check(solvesLimitErr);
+
+	for i := len(content) - solvesLimit - 1; i < len(content); i++ {
 		if content[i] == "" {
 			continue;
 		}
@@ -51,7 +58,7 @@ func main() {
 			time = "DNF(" + time + ")"
 		}
 
-		solves = append(solves, fmt.Sprintf("%d;%s;;%s;%s;%s", i+1, time, scramble, dateStr, data[0]));
+		solves = append(solves, fmt.Sprintf("%d;%s;;%s;%s;%s", i - len(content) + solvesLimit + 2, time, scramble, dateStr, data[0]));
 	}
 
 	err := os.WriteFile(path + "/" + "output.csv", []byte(strings.Join(solves, "\n")), 0222);
